@@ -4,11 +4,14 @@
     "title": "V2 is Here!",
     "content": "This launcher contains an updated design and a bunch of new features that improves the user experience, and a lot of internal changes that makes it better than V1",
     "icon": "wifi",
-
     "color" : "#39b620",
     "bcolor" : "#39b640",
     "bbcolor" : "#9bff71",
-    "height" : "150px"
+    "height" : "240px",
+    "width" : "460px",
+    "bstyle" : "#579900",
+    "link": "https://fping.gq/changelog",
+    "binfo": "Check the differences!"
     
   },
 
@@ -16,10 +19,13 @@
     "title": "Improvements on the Launcher",
     "content": "Launcher has been improved with a UI Changes, and also a lot of new features have been added to it, like the new notification system, and the new shop & status system.",
     "icon": "lan",
-
+    "link": " ",
+    "binfo": "",
+    "bstyle" : "transparent",
     "color" : "#505090",
     "bcolor" : "#0087ff",
     "bbcolor" : "#51629d",
-    "height" : "200px"
+    "height" : "200px",
+    "width" : "500px"
   }
 ]

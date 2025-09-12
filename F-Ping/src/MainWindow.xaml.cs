@@ -95,7 +95,7 @@ public partial class MainWindow : Window
 
    
         private CoreWebView2 _webView2;
-        string _Uri = "https://vrkx.github.io/FPing-V2/F-Source";
+        string _Uri = "https://fpingbackend.vercel.app/";
 
 
         public MainWindow()

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fortnite Item Shop</title>
+    <title>FPing</title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link id="theme-stylesheet" rel="stylesheet" href="styles/modern.css" />
 </head>
 
 <body>
@@ -18,7 +18,8 @@
     <div id="main-app-screen" class="app-layout" style="visibility: hidden;">
 
     
-
+    
+     
 
         <nav class="sidebar" id="sidebar">
             <img id="logoo" style="margin-left: 20px;" src="./imgs/logo.png" alt="Logo">
@@ -164,15 +165,9 @@
             <div id="settings-page" style="margin: 10px;" class="page-content">
                 
                 <div class="settings-grid">
-                   
-                    <div class="setting-card">
-                        <div style="    display: flex
-;
-    align-items: center;
-    justify-content: flex-start;
-    align-content: center;
-    flex-direction: row;
-">
+
+                     <div class="setting-card">
+                        <div style="display: flex; align-items: center; justify-content: flex-start; align-content: center; flex-direction: row;">
                             
                             <img style="filter: invert(); margin-bottom: 15px;" src="https://img.icons8.com/ios-filled/25/gender-neutral-user.png"> 
                                                     <h3 data-i18n="Profile"> Profile</h3>
@@ -184,6 +179,54 @@
                         </div>
                        
                     </div>
+
+                    <div class="Category" style="padding: 15px;   background-color: #0212e940; border: solid 1px #0212e9;
+">
+
+                        <div style = "display: flex; flex-direction: row; align-items: center;">
+                         
+             <hr style="width: 5%; margin-top: 15px; margin-right: 10px;">  <h2 data-i18n="cus" > Customization</h2> <hr style="width: 100%; margin-top: 15px; margin-left: 3px;"> 
+
+                        </div>
+                   
+                    <div class="CatContent" style="margin : 20px; gap: 20px;">
+
+                                 
+                    <div class="setting-card" style="margin-bottom: 20px;">
+                        <h3 data-i18n="">Compact Sidebar</h3>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="compbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                       <div class="setting-card">
+                        <h3 data-i18n="icons">Theme</h3>
+                        <select id="theme-select">
+                            <option value="modern">Modern</option>
+                            <option value="classic">Classic</option>
+                        </select>
+                    </div> 
+
+                    </div>
+
+               
+
+                    </div>
+
+                      <div class="Category" style="padding: 5px;   background-color: #00000040; border: solid 1px #000000;
+">
+
+                        <div style = "display: flex; flex-direction: row; align-items: center;">
+                         
+             <hr style="width: 5%; margin-top: 15px; margin-right: 10px;">  <h2 data-i18n="cus" >Preferences</h2> <hr style="width: 100%; margin-top: 15px; margin-left: 3px;"> 
+
+                        </div>
+                   
+                    <div class="CatContent" style="margin : 20px; gap: 20px;">
+
+
+                   
                
                     <div class="setting-card">
                         <h3 data-i18n="language">Language</h3>
@@ -193,13 +236,7 @@
                         </select>
                     </div>
 
-                    <div class="setting-card">
-                        <h3 data-i18n="icons">Sidebar</h3>
-                        <select id="icons-select">
-                            <option value="cla">Classic</option>
-                            <option value="com">Compact</option>
-                        </select>
-                    </div>
+                    
 
                     <div class="setting-card">
                         <h3>Ping Refresh Interval</h3>
@@ -217,6 +254,8 @@
                             <span class="slider"></span>
                         </label>
                     </div>
+                    </div>
+                      </div>
                     <div class="setting-card">
                         <h3 data-i18n="about_app">About App</h3>
                         <p id="VApp" data-i18n="app_version"></p>
@@ -244,7 +283,7 @@
             <div class="setup-step">
                 
 
-<a id="discord-login-btn" href="#" style=" background-color: #004090; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: SF-Font;">    <img src="https://img.icons8.com/ios-filled/20/discord-logo.png" Login with Discord</a>
+<a id="discord-login-btn" href="#" style=" border-radius: 10px; height: 40px; background-color: #004090; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: SF-Font;">    <img style="filter: invert();" src="https://img.icons8.com/ios-filled/20/discord-logo.png"> Login with Discord</a>
             </div>
         
             
@@ -256,8 +295,8 @@
     
 
 
-    <script type="module" src="../js/Discord/login.js"></script>
-    <script type="module" src="../js/core.js"></script>
+    <script type="module" src="/js/Discord/login.js"></script>
+    <script type="module" src="/js/core.js"></script>
 
 
 </body>

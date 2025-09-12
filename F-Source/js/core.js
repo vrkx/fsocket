@@ -27,11 +27,13 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
 
     // HTML elements
     const mainAppScreen = document.getElementById('main-app-screen');
+        const closee = document.getElementById('closee');
     const setupModal = document.getElementById('setup-screen-modal');
     const finishSetupBtn = document.getElementById('discord-login-btn');
         const sidebar = document.getElementById('sidebar');
      const userpfp = document.getElementById('prfo');
-
+    const compbox = document.getElementById('compbox');
+    const themeStylesheet = document.getElementById('theme-stylesheet');
     const sidebarProfileName = document.getElementById('sidebar-username');
     const navLinks = document.querySelectorAll('.nav-link');
     const pageContents = document.querySelectorAll('.page-content');
@@ -39,7 +41,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
     const iconsse = document.getElementById('icons-select');
     const serverListContainer = document.getElementById('server-list-container');
     const languageSelect = document.getElementById('language-select');
-    const themeSwatches = document.querySelectorAll('.theme-swatch');
+    const themeselect = document.getElementById('theme-select');
     const UserS = document.getElementById('UserSName');
     const saveUsernameBtn = document.getElementById('save-username-btn');
     const startupCheckbox = document.getElementById('startup-checkbox');
@@ -63,7 +65,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         const settings = JSON.parse(localStorage.getItem('appSettings')) || {};
         appSettings = {
             username: settings.username || null,
-            theme: settings.theme || 'dark',
+            theme: settings.theme || 'modern',
             language: settings.language || 'en',
             pingInterval: settings.pingInterval || 10000,
             sideicons : settings.sideicons || 'cla',
@@ -111,11 +113,12 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
     function updateUIFromSettings() {
 
         document.documentElement.setAttribute('data-theme', appSettings.theme);
-        iconsse.value = appSettings.sideicons;
+        compbox.value = appSettings.sideicons;
         languageSelect.value = appSettings.language;
       //  sideicons.value = appSettings.sideicons;
         pingIntervalSelect.value = appSettings.pingInterval;
         startupCheckbox.checked = appSettings.startup;
+        themeStylesheet.href = `styles/${appSettings.theme}.css`;
 
 
          // welcome thing 
@@ -185,9 +188,9 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         saveSettings();
 
 
-        if (appSettings.sideicons === 'cla') {
+        if (appSettings.sideicons == false) {
        
-   const logoo = document.getElementById('logoo');
+         const logoo = document.getElementById('logoo');
             logoo.src = './imgs/logo.png'
             logoo.alt = 'logo'
             const fnstatusspn = document.getElementById('fnstatusspn');
@@ -206,7 +209,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
 
         }
 
-        else if (appSettings.sideicons === 'com') {
+        else   {
             
 
             const logoo = document.getElementById('logoo');
@@ -245,11 +248,20 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
             const response = await fetch('./data/news.json');
             const newsItems = await response.json();
             newsContainer.innerHTML = newsItems.map(item => `
-                <div class="news-item" style="  background-image: radial-gradient(circle, ${item.bcolor}, ${item.bbcolor}); height: ${item.height}; border : 2px solid ${item.bcolor};">
+                <div class="news-item" style=" padding: 30px;  align-items: center; width : ${item.width}; background-image: radial-gradient(circle, ${item.bcolor}, ${item.bbcolor}); height: ${item.height}; border : 2px solid ${item.bcolor};">
                     ${ICONS[item.icon] || ''}
                     <div style="style=" display: flex;  flex-direction: column;  align-content: center; justify-content: center; align-items: flex-start;">
                     <h2>${item.title}</h2><p style="margin-bottom : 20px">${item.content}</p>
+                    <div>
                     
+                                        <button id="showmorene" onclick="window.open('${item.link}', '_blank')" class="news-read-more-btn" style="background-color: ${item.bstyle}; border: 1px solid ${item.bstyle}; border-radius : 10px; color: white; padding: 10px 15px; width : ${item.bstyle}  border-radius: 5px; cursor: pointer;"> ${item.binfo}</button>
+
+                    
+
+                    </div>
+
+
+
                     </div>
                 </div>`).join('') || `<div class="no-news">${translations.no_news}</div>`;
         } catch (error) {
@@ -369,9 +381,30 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
     });
 
  
+    function switchTheme(themeName) {
+      
+            themeStylesheet.href = `styles/${themeName}.css`;
+       
+            appSettings.theme = themeName;
+            saveSettings();
+            updateUIFromSettings();
+            document.documentElement.setAttribute('data-theme', themeName);
+    }
+
+
     languageSelect.addEventListener('change', () => { loadLanguage(languageSelect.value).then(saveSettings); });
     
-    iconsse.addEventListener('change', () => { buildSidebar(iconsse.value).then(saveSettings); });
+ 
+       themeselect.addEventListener('change', () => { switchTheme(themeselect.value).then(saveSettings); });
+    
+    
+
+    pingIntervalSelect.addEventListener('change', () => {
+        appSettings.pingInterval = parseInt(pingIntervalSelect.value);
+        saveSettings();
+        startPingInterval();
+    });
+
     
 
     pingIntervalSelect.addEventListener('change', () => {
@@ -386,6 +419,15 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         saveSettings();
         window.chrome.webview.hostObjects.controller.SetStartup(appSettings.startup);
     });
+
+
+       compbox.addEventListener('change', () => {
+        appSettings.sideicons = compbox.checked;
+        saveSettings();
+        buildSidebar(appSettings.sideicons);
+
+    });
+    
     
     resetAppBtn.addEventListener('click', () => {
         if(confirm('Are you sure you want to clear all app data? The app will restart.')) {

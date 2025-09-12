@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FPing-V2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb993f19cd1904e553ed1dbc9afffcf6598c11d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3b7ed6c5f92f37d74f6291aa452397393718b45")]
 [assembly: System.Reflection.AssemblyProductAttribute("FPing-V2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FPing-V2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
