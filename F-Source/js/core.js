@@ -214,7 +214,7 @@ import  fetchAndDisplayShop  from './FPing/Functions//Fortnite/Shop/shopv2.js';
             const logoo = document.getElementById('logoo');
             logoo.src = ''
             logoo.alt = ''
-            
+             sidebar.style.width = '70px';
             const fnstatusspn = document.getElementById('fnstatusspn');
             const thidk = document.getElementById('thidk');
             const sidepro = document.getElementById('sidepro');
