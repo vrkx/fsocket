@@ -42,10 +42,11 @@
 ## 📃 TO-DO
 
 - [X] Exit, Minimize buttons
-- [ ] News
+- [X] News
 - [X] Compact Sidebar
 - [X] UI Changes
 - [ ] Drag window
 - [X] Show Fortnite Item Shop 
 - [ ] Discord Game Activity
-- [ ] More pfps, custom ones- 
+- [X] Discord PFP Implementation
+- [X] Enhanced Shop System now with [FortniteApi](https://fortnite-api.com/)
