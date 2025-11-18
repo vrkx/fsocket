@@ -1,10 +1,11 @@
 {
-  "welcome_message": "¡Bienvenido",
+  "welcome_message": "¡Bienvenido!",
   "sub_welcome_message": "¡Esperando que tengas un gran día!",
   "home": "Inicio",
   "servers": "Servidores",
   "settings": "Ajustes",
-    "Shop": "Tienda",
+  "Shop": "Tienda",
+  "news_toper" : "Novedades",
   "no_news": "No hay noticias para mostrar.",
   "pinging": "Conectando...",
   "theme_settings": "Ajustes de Tema",

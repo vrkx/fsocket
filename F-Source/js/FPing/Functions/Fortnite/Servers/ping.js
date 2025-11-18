@@ -2,7 +2,7 @@
     let appSettings = {};
     let translations = {};
     let pingIntervalId = null;
-    const appVersion = '2.0.1';
+    const appVersion = '2.2.2';
 
 
 

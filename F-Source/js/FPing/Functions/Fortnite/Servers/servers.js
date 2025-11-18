@@ -29,6 +29,7 @@
         }
         
         servers.forEach(server => {
+            try {
             const serverElement = document.getElementById(`server-${server.Name}`);
             const pingElement = serverElement.querySelector('.ping');
             const spinnerElement = serverElement.querySelector('.ping-spinner');
@@ -48,6 +49,7 @@
                     pingElement.className = 'ping error';
                 }
             });
+         } catch (error) { console.log('Error : User is not using FPing App')}
         });
     }
 

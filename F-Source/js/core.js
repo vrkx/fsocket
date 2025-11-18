@@ -1,7 +1,7 @@
-import  pingAllServers  from './Fortnite/Servers/servers.js';
-import  startPingInterval  from './Fortnite/Servers/ping.js';
-import  getFortniteStatus  from './Fortnite/Status/status.js';
-import  initializeShop  from './Fortnite/Shop/shop.js';
+import  pingAllServers  from './FPing/Functions/Fortnite/Servers/servers.js';
+import  startPingInterval  from './FPing/Functions//Fortnite/Servers/ping.js';
+import  getFortniteStatus  from './FPing/Functions//Fortnite/Status/status.js';
+import  fetchAndDisplayShop  from './FPing/Functions//Fortnite/Shop/shopv2.js';
 
 
     
@@ -12,7 +12,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
     let appSettings = {};
     let translations = {};
     let pingIntervalId = null;
-    const appVersion = '2.1.0';
+    const appVersion = '2.2.2';
   
     // ICONS
 
@@ -23,25 +23,25 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         servers: '<img src="./imgs/icons/servers.png">',
         settings: '<img src="./imgs/icons/settings.png">',
         wifi:   '<img src="./imgs/icons/wif50.png">',
+        updt:   '<img src="./imgs/icons/icons8-update.svg">',
     };
 
     // HTML elements
     const mainAppScreen = document.getElementById('main-app-screen');
-        const closee = document.getElementById('closee');
     const setupModal = document.getElementById('setup-screen-modal');
     const finishSetupBtn = document.getElementById('discord-login-btn');
+        const offline = document.getElementById('guess-btn');
         const sidebar = document.getElementById('sidebar');
      const userpfp = document.getElementById('prfo');
-    const compbox = document.getElementById('compbox');
-    const themeStylesheet = document.getElementById('theme-stylesheet');
+    const wcm = document.getElementById('welcome_message')
     const sidebarProfileName = document.getElementById('sidebar-username');
     const navLinks = document.querySelectorAll('.nav-link');
     const pageContents = document.querySelectorAll('.page-content');
-    const newsContainer = document.getElementById('news-container');
+
     const iconsse = document.getElementById('icons-select');
     const serverListContainer = document.getElementById('server-list-container');
     const languageSelect = document.getElementById('language-select');
-    const themeselect = document.getElementById('theme-select');
+    const themeSwatches = document.querySelectorAll('.theme-swatch');
     const UserS = document.getElementById('UserSName');
     const saveUsernameBtn = document.getElementById('save-username-btn');
     const startupCheckbox = document.getElementById('startup-checkbox');
@@ -65,7 +65,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         const settings = JSON.parse(localStorage.getItem('appSettings')) || {};
         appSettings = {
             username: settings.username || null,
-            theme: settings.theme || 'modern',
+            theme: settings.theme || 'dark',
             language: settings.language || 'en',
             pingInterval: settings.pingInterval || 10000,
             sideicons : settings.sideicons || 'cla',
@@ -92,10 +92,8 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         
             setupModal.style.display = 'none';
             document.getElementById('VApp').innerText = `Version: ${appVersion}`;
-
-            fetchNews();
             getFortniteStatus();
-            initializeShop();
+            fetchAndDisplayShop();
             pingAllServers();
             startPingInterval();
         } else {
@@ -113,12 +111,11 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
     function updateUIFromSettings() {
 
         document.documentElement.setAttribute('data-theme', appSettings.theme);
-        compbox.value = appSettings.sideicons;
+        iconsse.value = appSettings.sideicons;
         languageSelect.value = appSettings.language;
       //  sideicons.value = appSettings.sideicons;
         pingIntervalSelect.value = appSettings.pingInterval;
         startupCheckbox.checked = appSettings.startup;
-        themeStylesheet.href = `styles/${appSettings.theme}.css`;
 
 
          // welcome thing 
@@ -154,7 +151,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
 
 
          sidebarProfileName.textContent = username;
-      document.querySelector('.welcome-header h1').textContent = `${ randomPhrase } ${username}`;
+        wcm.textContent = 'Welcome!';
         
     }
 
@@ -166,6 +163,9 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         'url("./imgs/backgrounds/tiltedup.jpg")',
         'url("./imgs/backgrounds/samu.jpg")',
         'url("./imgs/backgrounds/bri.jpg")',
+        'url("https://primagames.com/wp-content/uploads/2025/11/lard-lad-donuts-fortnite.jpg?w=1200")',
+        'url("https://insider-gaming.com/wp-content/uploads/2025/11/The-Simpsons-House-Fortnite-scaled.jpg")',
+
     ]
 
     function changeBackground() {
@@ -188,15 +188,14 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         saveSettings();
 
 
-        if (appSettings.sideicons == false) {
+        if (appSettings.sideicons === 'cla') {
        
-         const logoo = document.getElementById('logoo');
+   const logoo = document.getElementById('logoo');
             logoo.src = './imgs/logo.png'
             logoo.alt = 'logo'
             const fnstatusspn = document.getElementById('fnstatusspn');
             fnstatusspn.textContent = 'FNStatus :'
             const thidk = document.getElementById('thidk');
-            thidk.style.marginTop = '105px';
             sidebar.style.width = '240px';
             const sidepro = document.getElementById('sidepro');
             sidepro.classList.remove('proexpand');
@@ -209,7 +208,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
 
         }
 
-        else   {
+        else if (appSettings.sideicons === 'com') {
             
 
             const logoo = document.getElementById('logoo');
@@ -218,9 +217,6 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
             
             const fnstatusspn = document.getElementById('fnstatusspn');
             const thidk = document.getElementById('thidk');
-            sidebar.style.width = '70px';     
-            thidk.style.marginTop = '200px'; // this is the fnstatus dot 
-            fnstatusspn.textContent = ' '
             const sidepro = document.getElementById('sidepro');
             sidepro.classList.add('proexpand');
 
@@ -243,33 +239,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
     
   
 
-    async function fetchNews() {
-        try {
-            const response = await fetch('./data/news.json');
-            const newsItems = await response.json();
-            newsContainer.innerHTML = newsItems.map(item => `
-                <div class="news-item" style=" padding: 30px;  align-items: center; width : ${item.width}; background-image: radial-gradient(circle, ${item.bcolor}, ${item.bbcolor}); height: ${item.height}; border : 2px solid ${item.bcolor};">
-                    ${ICONS[item.icon] || ''}
-                    <div style="style=" display: flex;  flex-direction: column;  align-content: center; justify-content: center; align-items: flex-start;">
-                    <h2>${item.title}</h2><p style="margin-bottom : 20px">${item.content}</p>
-                    <div>
-                    
-                                        <button id="showmorene" onclick="window.open('${item.link}', '_blank')" class="news-read-more-btn" style="background-color: ${item.bstyle}; border: 1px solid ${item.bstyle}; border-radius : 10px; color: white; padding: 10px 15px; width : ${item.bstyle}  border-radius: 5px; cursor: pointer;"> ${item.binfo}</button>
-
-                    
-
-                    </div>
-
-
-
-                    </div>
-                </div>`).join('') || `<div class="no-news">${translations.no_news}</div>`;
-        } catch (error) {
-            showNotification('error', 'News Fetch Error', 'Failed to load news. Please check your connection or try again later.');
-            newsContainer.innerHTML = `<div class="no-news">${translations.no_news}</div>`;
-        }
-    }
-
+  
     async function loadLanguage(lang) {
         try {
             const response = await fetch(`./data/lang/${lang}.json`);
@@ -281,7 +251,7 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
                 if (translations[key]) el.textContent = translations[key];
             });
             updateUIFromSettings(); 
-        } catch (error) { showNotification('error', 'Language Load Error', `Failed to load language file: ${lang}. Please check your connection or try again later.`); }
+        } catch (error) {`internal error (dontmind) : ${error}`}
     }
 
     
@@ -380,31 +350,24 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
   
     });
 
- 
-    function switchTheme(themeName) {
-      
-            themeStylesheet.href = `styles/${themeName}.css`;
-       
-            appSettings.theme = themeName;
-            saveSettings();
-            updateUIFromSettings();
-            document.documentElement.setAttribute('data-theme', themeName);
-    }
+     offline.addEventListener('click', () => {
+  
 
+   localStorage.setItem('discordUsername', "Guest");
+            getFortniteStatus();
+            fetchAndDisplayShop();
+            pingAllServers();
+            startPingInterval();
+        setupModal.style ='display : none;'
+        mainAppScreen.style ='display : flex; visibility : visible;'
+    saveSettings();
 
-    languageSelect.addEventListener('change', () => { loadLanguage(languageSelect.value).then(saveSettings); });
-    
- 
-       themeselect.addEventListener('change', () => { switchTheme(themeselect.value).then(saveSettings); });
-    
-    
-
-    pingIntervalSelect.addEventListener('change', () => {
-        appSettings.pingInterval = parseInt(pingIntervalSelect.value);
-        saveSettings();
-        startPingInterval();
     });
 
+ 
+    languageSelect.addEventListener('change', () => { loadLanguage(languageSelect.value).then(saveSettings); });
+    
+    iconsse.addEventListener('change', () => { buildSidebar(iconsse.value).then(saveSettings); });
     
 
     pingIntervalSelect.addEventListener('change', () => {
@@ -419,15 +382,6 @@ import  initializeShop  from './Fortnite/Shop/shop.js';
         saveSettings();
         window.chrome.webview.hostObjects.controller.SetStartup(appSettings.startup);
     });
-
-
-       compbox.addEventListener('change', () => {
-        appSettings.sideicons = compbox.checked;
-        saveSettings();
-        buildSidebar(appSettings.sideicons);
-
-    });
-    
     
     resetAppBtn.addEventListener('click', () => {
         if(confirm('Are you sure you want to clear all app data? The app will restart.')) {

@@ -49,4 +49,5 @@
 - [X] Show Fortnite Item Shop 
 - [ ] Discord Game Activity
 - [X] Discord PFP Implementation
+- [X] Deleted old shop api (deprecated)
 - [X] Enhanced Shop System now with [FortniteApi](https://fortnite-api.com/)

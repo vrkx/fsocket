@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FPing</title>
+    <title>FPing </title>
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
-    <link id="theme-stylesheet" rel="stylesheet" href="styles/modern.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-       <div id="notification-container" class="fixed top-5 right-5 z-50 space-y-3"></div>
-       
-
-
-    <div id="main-app-screen" class="app-layout" style="visibility: hidden;">
-
+    <div id="notification-container" class="fixed top-5 right-5 z-50 space-y-3"></div>
     
-    
-     
+    <div id="main-app-screen" class="app-layout" hidden>
 
         <nav class="sidebar" id="sidebar">
             <img id="logoo" style="margin-left: 20px;" src="./imgs/logo.png" alt="Logo">
@@ -28,7 +21,7 @@
                 <li>
                     <a href="#" class="nav-link active" data-page="home">
                         <img src="./imgs/icons/shop.png" alt="Home Icon">
-                     <span>Home</span>
+                        <span>Home</span>
                     </a>
                 </li>
                 <li>
@@ -51,183 +44,106 @@
                 </li>
             </ul>
             
-             <div id="thidk" style="border-radius: 10px;  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1.5px solid #ffffff1a;    padding: 10px;   margin-top: 105px; margin-bottom: 4px;   flex-direction: row; display: flex ;  background: #1010108a; justify-content: center;">
-                <span id="fnstatusspn" style="font-family: SF-Font;">FNStatus :</span>
-                <div id="general-status" style="width: 24px; height: 24px; border-radius: 100px;"></div>
-            </div>
+           
 
             <div id="sidepro" class="sidebar-profile">
-              <div style=" overflow: hidden; display: flex; align-items: center; justify-content: flex-start; align-content: center; flex-direction: row;">
-                <img src="./imgs/Ramirez.png" alt="Profile" id="userpfp" class="profile-pic">
-                <span id="sidebar-username">Username</span>
-               </div>
-              
+                <div style=" overflow: hidden; display: flex; align-items: center; justify-content: flex-start; align-content: center; flex-direction: row;">
+                    <img src="./imgs/Ramirez.png" alt="Profile" id="userpfp" class="profile-pic">
+                    <span id="sidebar-username">Username</span>
+                </div>
             </div>
         </nav>
 
         <main class="content">
 
-            
-
-
-                <div class="pageheader" style="padding: 10px;">
-
+            <header class="pageheader" style="padding: 10px;">
                 <img src="./imgs/icons/home.png" id="headerdisplayimg" style="height: 18px;" alt="Logo" class="logo">
                 <h1 style="margin-bottom: 3px; font-size: 20px;" id="headerdisplaylabel"> Home</h1>
-                
-                </div>
-      
+            </header>
+            
+            <section id="home-page" style="margin: 10px;" class="page-content active">
 
-            <div id="home-page" style="margin: 10px;" class="page-content active">
-
-
-                <div class="background-home">
-
-                    <img id="homebck" >
-
-                </div>
-          
+               
                 <header class="welcome-header">
-                    <h1 data-i18n="welcome_message">Greetings!</h1>
+                    <h2 data-i18n="welcome_message">Greetings!</h2>
                     <p data-i18n="sub_welcome_message">Hoping you are having a great day!</p>
                 </header>
-                <div id="news-container"></div>
-            </div>
 
-            <div id="servers-page" style="margin: 10px;" class="page-content">
-            
+                <section class="news-section">
+                    <div style=" padding: 10px; display: flex; flex-direction: row; flex-wrap: nowrap; align-content: center; align-items: center;">
+                        <img src="https://img.icons8.com/material-rounded/24/news.png" alt="" style="filter: invert(1); width: 35px; height: 34px; margin-top: 8.5px;"> 
+                        <h2 data-i18n="news_toper" style="font-family: sans-serif;">News and Updates</h2>
+                    </div>
+
+                    <hr style="margin-left: 11px; margin-right: auto; width: 90%;">
                 
-                <h2>Fortnite Status</h2>
+                    <div id="news-container" style="padding : 5px;">
+                     
+                        <div id="news-recent" style="padding : 5px;"></div>
+                        <div id="news-top" style="padding : 5px;"></div>
+                    </div>
+                </section>
+            </section>
+
+            <section id="servers-page" style="margin: 10px;" class="page-content">
+                <div style="background-color: #010400; padding: 10px; border: solid 1px #31ff00;">
+                    
+               
+                <div style="display: flex;align-content: center;align-items: center;"> <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/globe--v1.png" alt="globe--v1" style="filter: invert(1);">
+                     <h2>Fortnite Status</h2>
+                </div>
+                 <div id="thidk"  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1.5px solid #ffffff1a; padding: 10px; margin-bottom: 4px; flex-direction: row; display: flex ; background: #1010108a; justify-content: center;">
+                <span id="fnstatusspn" style="font-family: sans-serif;">Fortnite Status :</span>
+                <div id="general-status" style="width: 24px; height: 24px; border-radius: 100px;"></div>
+                
+            </div>
                 <div id="status-container" class="status-container"></div>
+                 </div>
                 <hr style="margin-top: 20px; opacity: 50%;">
+                
                 <h2>Fortnite Matchmaking</h2> 
+                
                 <div style="display: flex; cursor: pointer; align-items: center; margin-bottom: 10px; background-color: #004090; border-radius: 10px; height: 40px; width: 85px;">
                     <img src="./imgs/icons/refresh.png" alt="Refresh Icon" id="refresh-pings-icon" style="cursor: pointer; width: 20px; height: 20px; margin-right: 10px; margin-left: 5px;">
-       <button id="refresh-pings-btn"  style="background-color: transparent; border: none; color: white;" >Refresh</button>
-
-                </div>
-         
-                <div id="server-list-container"></div>
-          
-                <div class="disclams" style="margin-top: 10px;">
-                    Data provided from <a href="https://epicgames.com" target="_blank">Epic Games</a>
+                    <button id="refresh-pings-btn" style="background-color: transparent; border: none; color: white;">Refresh</button>
                 </div>
             
-            </div>
+                <div id="server-list-container"></div>
+            
+                <footer class="disclams" style="margin-top: 10px;">
+                    Data provided from <a href="https://epicgames.com" target="_blank">Epic Games</a>
+                </footer>
+            </section>
 
-            <div id="shop-page" style="margin: 10px;" class="page-content">
+            <section id="shop-page" style="margin: 10px;" class="page-content">
                 <div class="background"></div>
                
-
+                <footer class="disclams">
+                    Data provided from 
+                    <img style=" border-radius: 2px; margin-left: 5px; width: 15px; position: sticky; height: 15px;" src="https://fortnite-api.com/assets/img/logo.png" alt="Fortnite API Icon"> 
+                    <a href="https://fortnite-api.com/" target="_blank">FortniteApi</a>
+                </footer>
                 
-                  <div id="filter-controls" class="backfi" style="display: flex; gap: 10px; align-items: center;">
-                    
-                        <select id="type-filter"class="filter-select" >
-                            <option value="all">All Types</option>
-                            <option value="outfit">Outfit</option>
-                            <option value="pickaxe">Pickaxe</option>
-                            <option value="emote">Emote</option>
-                            <option value="bundle">Bundle</option>
-                            <option value="wrap">Wrap</option>
-                        </select>
-                        <select id="rarity-filter" class="filter-select">
-                            <option value="all">All Rarities</option>
-                            <option value="legendary">Legendary</option>
-                            <option value="epic">Epic</option>
-                            <option value="rare">Rare</option>
-                            <option value="uncommon">Uncommon</option>
-                            <option value="common">Common</option>
-                        </select>
-                        <select id="sort-filter" class="filter-select">
-                            <option value="default">Default Sort</option>
-                            <option value="price-desc">Price: High to Low</option>
-                            <option value="price-asc">Price: Low to High</option>
-                            <option value="name-az">Name: A-Z</option>
-                        </select>
-                    </div>
-                    <div class="search-container">
-                     <input type="text" id="search-bar"  placeholder='Search for an item...''>
-                    </div>
-
-                 <div class="disclams">
-                    Data provided from <img style="    border-radius: 2px; margin-left: 5px; width: 15px; position: sticky; height: 15px;
-" src="https://fortniteapi.io/favicon"> <a href="https://fortniteapi.io/" target="_blank">FortniteApi.io</a>
-                </div>
-                <div class="spb" id="shop-container">
-                    <p class="loading">Loading today's shop...</p>
-                </div>
-
-
-               
-
-            </div>
+              <main id="shop-container">
+                     <p>Loading shop data...</p>
+                </main>
+            </section>
             
-            <div id="settings-page" style="margin: 10px;" class="page-content">
-                
+            <section id="settings-page" style="margin: 10px;" class="page-content">
                 <div class="settings-grid">
-
-                     <div class="setting-card">
-                        <div style="display: flex; align-items: center; justify-content: flex-start; align-content: center; flex-direction: row;">
-                            
-                            <img style="filter: invert(); margin-bottom: 15px;" src="https://img.icons8.com/ios-filled/25/gender-neutral-user.png"> 
-                                                    <h3 data-i18n="Profile"> Profile</h3>
+                    
+                    <div class="setting-card">
+                        <div style=" display: flex;align-items: center;justify-content: flex-start;align-content: center;flex-direction: row;">
+                            <img style="filter: invert(); margin-bottom: 15px;" src="https://img.icons8.com/ios-filled/25/gender-neutral-user.png" alt="Profile Icon"> 
+                            <h3 data-i18n="Profile"> Profile</h3>
                         </div>
 
                         <div class="sidebar-profile">
                             <img src="./imgs/Ramirez.png" alt="Profile" id="prfo" class="profile-pic">
                             <span style="color: wheat;" id="UserSName">Username</span>
                         </div>
-                       
                     </div>
-
-                    <div class="Category" style="padding: 15px;   background-color: #0212e940; border: solid 1px #0212e9;
-">
-
-                        <div style = "display: flex; flex-direction: row; align-items: center;">
-                         
-             <hr style="width: 5%; margin-top: 15px; margin-right: 10px;">  <h2 data-i18n="cus" > Customization</h2> <hr style="width: 100%; margin-top: 15px; margin-left: 3px;"> 
-
-                        </div>
-                   
-                    <div class="CatContent" style="margin : 20px; gap: 20px;">
-
-                                 
-                    <div class="setting-card" style="margin-bottom: 20px;">
-                        <h3 data-i18n="">Compact Sidebar</h3>
-                        <label class="toggle-switch">
-                            <input type="checkbox" id="compbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                       <div class="setting-card">
-                        <h3 data-i18n="icons">Theme</h3>
-                        <select id="theme-select">
-                            <option value="modern">Modern</option>
-                            <option value="classic">Classic</option>
-                        </select>
-                    </div> 
-
-                    </div>
-
-               
-
-                    </div>
-
-                      <div class="Category" style="padding: 5px;   background-color: #00000040; border: solid 1px #000000;
-">
-
-                        <div style = "display: flex; flex-direction: row; align-items: center;">
-                         
-             <hr style="width: 5%; margin-top: 15px; margin-right: 10px;">  <h2 data-i18n="cus" >Preferences</h2> <hr style="width: 100%; margin-top: 15px; margin-left: 3px;"> 
-
-                        </div>
-                   
-                    <div class="CatContent" style="margin : 20px; gap: 20px;">
-
-
-                   
-               
+                
                     <div class="setting-card">
                         <h3 data-i18n="language">Language</h3>
                         <select id="language-select">
@@ -236,7 +152,21 @@
                         </select>
                     </div>
 
-                    
+                    <div class="setting-card">
+                        <h3 data-i18n="icons">Sidebar</h3>
+                        <select id="icons-select">
+                            <option value="cla">Classic</option>
+                            <option value="com">Compact</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-card">
+                        <h3 data-i18n="styles">Style</h3>
+                        <select id="style-select">
+                            <option value="trs">Transparent</option>
+                            <option value="drk">Dark</option>
+                        </select>
+                    </div>
 
                     <div class="setting-card">
                         <h3>Ping Refresh Interval</h3>
@@ -247,6 +177,7 @@
                             <option value="0">Manual Only</option>
                         </select>
                     </div>
+
                     <div class="setting-card">
                         <h3 data-i18n="start_with_windows">Start with Windows</h3>
                         <label class="toggle-switch">
@@ -254,50 +185,47 @@
                             <span class="slider"></span>
                         </label>
                     </div>
-                    </div>
-                      </div>
+
                     <div class="setting-card">
                         <h3 data-i18n="about_app">About App</h3>
                         <p id="VApp" data-i18n="app_version"></p>
                         <button id="reset-app-btn" class="button-danger">Logout</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
-
-              <div class="noti-holder">
-
-     
-
-    </div>
-
-
+            <div class="noti-holder"></div>
+        </main> 
+    </div> 
     
-        </main> </div> <div id="setup-screen-modal" class="modal-backdrop" style="display: none;">
+    <section id="setup-screen-modal" class="modal-backdrop" hidden>
         <div class="setup-container">
-            <h2>Welcome to FPing!</h2>
-            <div class="setup-step">
-                <h3 style="margin: 10px; margin-left: 65px;">Please log in to continue.</h3>
+             <img style="filter: invert(); margin-left: 150px; " width="50" height="50" src="https://img.icons8.com/ios/50/so-so.png" alt="so-so"/>
                 
-            </div>
-            <div class="setup-step">
-                
-
-<a id="discord-login-btn" href="#" style=" border-radius: 10px; height: 40px; background-color: #004090; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: SF-Font;">    <img style="filter: invert();" src="https://img.icons8.com/ios-filled/20/discord-logo.png"> Login with Discord</a>
-            </div>
-        
+            <h2 style="font-family: sans-serif; font-weight: bold;" >Welcome to FPing!</h2>
             
+            <div class="setup-step" >
+               <h3 style="margin: 10px; font-family: sans-serif; font-weight: 100; margin-left: 65px;">Please log in to continue.</h3>
+            </div>
+            
+            <div class="setup-step">
+                <a id="discord-login-btn" href="#" target="_blank" style="box-shadow: 0 0px 10px rgb(0 0 0 / 75%);
+ cursor: pointer; text-decoration: none; color: #fff; height: 40px; border-radius: 10px; background-color: #004090; display: flex; align-items: center; gap: 5px;  justify-content: center; font-weight: bold; font-family: sans-serif;"> 
+                    <img style="filter: invert();" src="https://img.icons8.com/ios-filled/20/discord-logo.png" alt="Discord Icon"> 
+                    Login with Discord 
+                </a>
+            </div>
+            
+            <a id="guess-btn" target="_blank" style=" box-shadow: 0 0px 10px rgb(0 0 0 / 75%);
+cursor: pointer; text-decoration: none; color: #fff; height: 40px; border-radius: 10px; background-color: #904100; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: sans-serif;"> 
+                Stay as guest 
+            </a>
         </div>
-    </div>
+    </section>
 
-
-  
-    
-
-
-    <script type="module" src="/js/Discord/login.js"></script>
-    <script type="module" src="/js/core.js"></script>
-
+    <script type="module" src="./js/Discord/login.js"></script>
+    <script type="module" src="./js/core.js"></script>
+    <script type="module" src="./js/FPing/Functions/news.js"></script>
 
 </body>
 </html>
