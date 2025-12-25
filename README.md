@@ -20,7 +20,8 @@ Note : Portions of the materials used are trademarks and/or copyrighted works of
 
 ## Showcase
 
-<img width="765" height="541" alt="image" src="https://github.com/user-attachments/assets/e9ded018-51a1-49ae-9b33-ddb4aad75950" />
+<img width="767" height="543" alt="image" src="https://github.com/user-attachments/assets/a3b9dd92-f607-4977-8c0d-87bb368b4705" />
+
 
 
 
