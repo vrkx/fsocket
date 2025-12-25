@@ -1,7 +1,11 @@
 
 <img width="550" height="110" alt="show" src="https://github.com/user-attachments/assets/910c1171-8ed8-4fdf-96e7-1785bc280af3" />
 
-Note : This is an enhanced version of [FPing](https://github.com/vrkx/FPing/)
+Note : Portions of the materials used are trademarks and/or copyrighted works of Epic Games, Inc. All rights reserved by Epic. This material is not official and is not endorsed by Epic.
+
+
+
+> This is an enhanced version of [FPing](https://github.com/vrkx/FPing/)
 
 <hr>
 
