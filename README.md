@@ -1,7 +1,7 @@
 
-<img width="550" height="110" alt="show" src="https://github.com/user-attachments/assets/910c1171-8ed8-4fdf-96e7-1785bc280af3" />
+<img width="1540" height="664" alt="thebanner" src="https://github.com/user-attachments/assets/47727787-8eb0-41c0-b48e-522d79ec39cf" />
 
-Note : Portions of the materials used are trademarks and/or copyrighted works of Epic Games, Inc. All rights reserved by Epic. This material is not official and is not endorsed by Epic.
+> Note : Portions of the materials used are trademarks and copyrighted works of Epic Games, Inc. All rights reserved by Epic. This material is not endorsed by Epic.
 
 
 
@@ -9,7 +9,7 @@ Note : Portions of the materials used are trademarks and/or copyrighted works of
 
 <hr>
 
-**FPing** provides a **quick and efficient way to monitor your connection to Fortnite servers in real-time.** This free tool allows you to check your ping (ms) before launching the game, helping you identify the best server for less delay. 
+**FSocket** provides a **quick and efficient way to monitor your connection to Fortnite servers in real-time.** This free tool allows you to check your ping (ms) before launching the game, helping you identify the best server for less delay. 
 
 
 <details>
@@ -30,7 +30,9 @@ Note : Portions of the materials used are trademarks and/or copyrighted works of
 ## Features
 
 * Real-time ping display
-* Checks multiple servers 
+* Fast and Easy to use
+* Checks multiple servers
+* Modern UI
 * Lightweight and easy to use
 * Display Fortnite Shop
 
