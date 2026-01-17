@@ -1,10 +1,14 @@
 
-<h1>🌐 FSocket</h1>
+<h1>
+ FPing </h1>
+  
+
+
 
 > This is an enhanced version of [FPing](https://github.com/vrkx/FPing/)
 
 
-**FSocket** provides a **quick and efficient way to monitor your connection to Fortnite servers in real-time.** This free tool also allows you to check a lot of Fortnite stats inclunding ping without entering the game. 
+**FPing** provides a **quick and efficient way to monitor your connection to Fortnite servers in real-time.** This free tool also allows you to check a lot of Fortnite stats inclunding ping without entering the game. 
 
 <details>
   
@@ -36,7 +40,7 @@
 
 ## 🗒️ TO-DO
 
-- Information will be added again soon.
+- [All info here](https://trello.com/b/T3P5pJjS)
 
 ### Disclaimer
 
